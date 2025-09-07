@@ -1,79 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.E. BATIMENT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LES TILLEULS D'ERIGONE — Immobilier & Location</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #111827; line-height: 1.6; }
-    header, footer { background: #1f2937; color: white; text-align: center; padding: 30px; }
-    nav a { color: #fbbf24; margin: 0 12px; text-decoration: none; font-weight: 600; }
-    section { padding: 60px 20px; max-width: 1200px; margin: auto; text-align: center; }
-    h2 { color: #1f2937; margin-bottom: 20px; font-size: 2.4em; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .gallery img { width: 100%; border-radius: 8px; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;
+    :root{
+      --forest:#184b2e;   /* primaire */
+      --gold:#caa43a;     /* accent  */
+      --bg:#f7fbf7;       /* fond    */
+      --card:#ffffff;     /* cartes  */
     }
-    iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; margin-top: 20px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:#222}
+    a{color:var(--forest);text-decoration:none}
+
+    header{background:var(--forest);color:#fff;text-align:center;padding:28px 16px;border-bottom:5px solid var(--gold)}
+    header h1{margin:0;font-size:2.3rem}
+    header p{margin:6px 0 0;opacity:.95}
+
+    nav{background:#113620;text-align:center;padding:12px}
+    nav a{color:#fff;margin:0 14px;font-weight:700}
+    nav a:hover{color:var(--gold)}
+
+    /* HERO */
+    .hero{max-width:1100px;margin:22px auto;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center;padding:0 14px}
+    .hero img{width:100%;border-radius:12px;border:4px solid var(--gold);object-fit:cover}
+    .hero .box{background:var(--card);border-left:6px solid var(--gold);border-radius:12px;padding:16px}
+
+    .section{max-width:1100px;margin:22px auto;background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .section h2{margin:0 0 12px;color:var(--forest)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    ul{margin:0;padding-left:18px;line-height:1.8}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .feature{background:#fbf9ef;border:1px solid #efe5c6;border-radius:10px;padding:12px}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+    .gallery img{width:100%;border-radius:10px;border:2px solid var(--gold);object-fit:cover;aspect-ratio:4/3}
+
+    .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--gold);color:#1a1608;padding:12px 16px;border-radius:10px;font-weight:800}
+    .btn.secondary{background:#fff;color:var(--forest);border:2px solid var(--forest)}
+
+    footer{background:var(--forest);color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:5px solid var(--gold)}
+
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>V.E. BATIMENT</h1>
+  <header>
+    <h1>LES TILLEULS D'ERIGONE</h1>
+    <p>Immobilier & Location — Le Vésinet (Île-de-France)</p>
+  </header>
+
   <nav>
-    <a href="#about">Présentation</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Galerie</a>
+    <a href="#about">À propos</a>
+    <a href="#offres">Nos services</a>
+    <a href="#galerie">Galerie</a>
     <a href="#contact">Contact</a>
-    <a href="#map">Adresse</a>
   </nav>
-</header>
 
-<section id="about">
-  <h2>Présentation</h2>
-  <p>Basée à Les Mureaux, V.E. BATIMENT est une entreprise spécialisée dans la maçonnerie générale et les gros travaux de construction. Grâce à une équipe qualifiée, nous réalisons des chantiers sur mesure en respectant les normes de qualité et de sécurité.</p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://avatars.mds.yandex.net/i?id=d25a5379934f7667a87ec043bde5697d3468d505-13239724-images-thumbs&n=13" alt="Résidence au Vésinet">
+    <div class="box">
+      <h2 style="margin:0 0 6px">Des lieux sereins pour bien vivre.</h2>
+      <p>Gestion et mise en location de biens résidentiels au <strong>Vésinet</strong> et alentours. Sélection rigoureuse des locataires, accompagnement clair et réactif.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:admin@metrsd.shop">Écrire : admin@metrsd.shop</a>
+      </div>
+    </div>
+  </section>
 
-<section id="services">
-  <h2>Nos Services</h2>
-  <p>Gros œuvre de bâtiment, travaux de maçonnerie, fondations, rénovation structurelle, et accompagnement personnalisé pour tous vos projets de construction.</p>
-</section>
+  <!-- À PROPOS -->
+  <section id="about" class="section">
+    <h2>À propos</h2>
+    <div class="two-col">
+      <p><strong>LES TILLEULS D'ERIGONE</strong> est un bailleur privé qui privilégie des biens bien entretenus, une relation simple et transparente et des engagements tenus.</p>
+      <p>Adresse : <strong>18 Rue Watteau, 78110 Le Vésinet, Île-de-France, France</strong>.</p>
+    </div>
+  </section>
 
-<section id="gallery">
-  <h2>Galerie</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1570126681032-3a7c41f13b0d?auto=format&fit=crop&w=800&q=80" alt="chantier 1">
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="chantier 2">
-    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="chantier 3">
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section id="offres" class="section">
+    <h2>Nos services</h2>
+    <div class="features">
+      <div class="feature"><strong>Location résidentielle</strong><br/>Appartements & maisons, dossiers vérifiés.</div>
+      <div class="feature"><strong>Gestion courante</strong><br/>Entrées/sorties, état des lieux, suivi technique.</div>
+      <div class="feature"><strong>Entretien & confort</strong><br/>Petites interventions, mise à niveau équipements.</div>
+      <div class="feature"><strong>Relation locataire</strong><br/>Communication fluide, réponses rapides.</div>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Contactez-nous</h2>
-  <p>Email : contact@vebatiment.shop</p>
-  <p>Téléphone : +33 6 05 99 64 90</p>
-  <form class="contact-form">
-    <input type="text" placeholder="Nom">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Votre message"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+  <!-- GALERIE -->
+  <section id="galerie" class="section">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="https://avatars.mds.yandex.net/i?id=bcfed5f5e3cd2d13c654494c41a13e65d4bbef93-10226583-images-thumbs&n=13" alt="Séjour lumineux">
+      <img src="https://avatars.mds.yandex.net/i?id=e0c54a1de57c054109e7a2e438155d4fcdc7da73-5233683-images-thumbs&n=13" alt="Cuisine équipée">
+      <img src="https://avatars.mds.yandex.net/i?id=ff3ce8a98ad57a169dad341f46843badb4153c03-9100543-images-thumbs&n=13" alt="Résidence verdoyante">
+      <img src="https://avatars.mds.yandex.net/i?id=4784b91749833b287bf38676fc3c2899beda8414-5232792-images-thumbs&n=13" alt="Extérieur & tilleuls">
+    </div>
+  </section>
 
-<section id="map">
-  <h2>Adresse</h2>
-  <p>66 Avenue du Maréchal Foch, 78130 Les Mureaux, France</p>
-  <iframe src="https://www.google.com/maps?q=66+Avenue+du+Mar%C3%A9chal+Foch,+Les+Mureaux,+France&output=embed" allowfullscreen loading="lazy"></iframe>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="two-col">
+      <div>
+        <p>📧 <strong>Email :</strong> <a href="mailto:admin@metrsd.shop">admin@metrsd.shop</a></p>
+        <p>📞 <strong>Téléphone :</strong> <em>à compléter</em></p>
+        <p>📍 <strong>Adresse :</strong> 18 Rue Watteau, 78110 Le Vésinet</p>
+      </div>
+      <div>
+        <p><em>Horaires</em></p>
+        <ul>
+          <li>Lun–Ven : 9h00 – 18h00</li>
+          <li>Samedi : 10h00 – 13h00</li>
+          <li>Dimanche : Fermé</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 V.E. BATIMENT — Tous droits réservés
-</footer>
+  <footer>
+    <p>&copy; 2025 LES TILLEULS D'ERIGONE — Immobilier & Location</p>
+  </footer>
 
 </body>
 </html>
